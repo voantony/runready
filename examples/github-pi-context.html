@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>RunReady PASS · ttttmr/pi-context</title>
+  <style>
+    :root { color-scheme: light; }
+    body { margin: 0; background: #f3ecdf; color: #1b1714; font-family: Palatino, "Palatino Linotype", Georgia, serif; }
+    main { max-width: 880px; margin: 0 auto; padding: 40px 20px 72px; }
+    h1 { font-weight: 500; letter-spacing: -0.03em; margin-bottom: 0.2rem; }
+    a { color: #6d2a22; }
+    .stamp { display: inline-block; border: 3px solid currentColor; padding: 0.15rem 0.55rem; font-family: ui-monospace, monospace; letter-spacing: 0.14em; transform: rotate(-6deg); }
+    .pass { color: #1d6b45; } .fail, .error { color: #9c2f2f; } .skipped, .running, .queued { color: #6b6258; }
+    .ticket { background: #fffaf3; border: 1px solid #d9d0c1; padding: 22px; margin-top: 22px; }
+    .meta, .note { font-family: ui-monospace, monospace; font-size: 12px; color: #5c564e; }
+    .step { border-top: 1px dashed #d9d0c1; padding: 16px 0; }
+    .step header { display: flex; justify-content: space-between; gap: 12px; font-family: ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #221e1a; color: #f3ecdf; padding: 12px; overflow: auto; }
+    .cmd { background: transparent; color: inherit; padding: 8px 0; font-size: 16px; }
+    .fix { border-left: 4px solid #9c2f2f; padding: 8px 12px; background: #f8efe8; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="meta">RunReady proof · 6d176136-98bc-49f5-88f0-d8c7076d6d8e</p>
+    <h1>ttttmr/pi-context</h1>
+    <p><a href="https://github.com/ttttmr/pi-context">https://github.com/ttttmr/pi-context</a></p>
+    <p class="stamp passed">PASS</p>
+    <section class="ticket">
+      <p class="meta">created 2026-11-06 02:21:17 UTC · duration 16s · sandbox unshare</p>
+      <p>Docs read: AGENTS.md</p>
+      
+      
+      
+      <article class="step">
+        <header>
+          <span class="phase">clone</span>
+          <strong class="passed">passed</strong>
+        </header>
+        <pre class="cmd">git clone --depth 1 https://github.com/ttttmr/pi-context.git</pre>
+        <p class="meta">source runner · exit 0 · 298 ms · network on</p>
+        
+        <pre class="log">Cloning into '/workspace/data/workspaces/6d176136-98bc-49f5-88f0-d8c7076d6d8e/repo'...</pre>
+      </article>
+<article class="step">
+        <header>
+          <span class="phase">install</span>
+          <strong class="passed">passed</strong>
+        </header>
+        <pre class="cmd">npm install</pre>
+        <p class="meta">source AGENTS.md:26 · exit 0 · 3.1s · network on</p>
+        
+        <pre class="log">npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 119 packages, and audited 120 packages in 3s
+
+3 vulnerabilities (2 moderate, 1 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.</pre>
+      </article>
+<article class="step">
+        <header>
+          <span class="phase">verify</span>
+          <strong class="passed">passed</strong>
+        </header>
+        <pre class="cmd">npm run typecheck</pre>
+        <p class="meta">source AGENTS.md:27 · exit 0 · 4.1s · network off</p>
+        
+        <pre class="log">&gt; pi-context@2.3.0 typecheck
+&gt; tsc --noEmit</pre>
+      </article>
+<article class="step">
+        <header>
+          <span class="phase">verify</span>
+          <strong class="passed">passed</strong>
+        </header>
+        <pre class="cmd">npm test</pre>
+        <p class="meta">source AGENTS.md:28 · exit 0 · 8.8s · network off</p>
+        
+        <pre class="log">&gt; pi-context@2.3.0 test
+&gt; npm run typecheck &amp;&amp; rm -rf dist &amp;&amp; tsc --declaration false &amp;&amp; node --test test/*.test.mjs
+
+
+&gt; pi-context@2.3.0 typecheck
+&gt; tsc --noEmit
+
+TAP version 13
+# Subtest: overlapping ranges keep assistant results only until another range hides them
+ok 1 - overlapping ranges keep assistant results only until another range hides them
+  ---
+  duration_ms: 3.750072
+  type: 'test'
+  ...
+# Subtest: native compaction keeps a hidden raw tail without losing range rules
+ok 2 - native compaction keeps a hidden raw tail without losing range rules
+  ---
+  duration_ms: 0.723
+  type: 'test'
+  ...
+# Subtest: native compaction summarizes the range summary without losing range rules
+ok 3 - native compaction summarizes the range summary without losing range rules
+  ---
+  duration_ms: 0.402004
+  type: 'test'
+  ...
+# Subtest: range rules from another branch and ranges with off-branch endpoints do not hide active history
+ok 4 - range rules from another branch and ranges with off-branch endpoints do not hide active history
+  ---
+  duration_ms: 0.28421
+  type: 'test'
+  ...
+# Subtest: cloned messages sharing a timestamp retain their source identity in full requests and native subsets
+ok 5 - cloned messages sharing a timestamp retain their source identity in full requests and native subsets
+  ---
+  duration_ms: 0.769103
+  type: 'test'
+  ...
+# Subtest: an extension injection sharing a hidden message timestamp survives without resurrecting hidden content
+ok 6 - an extension injection sharing a hidden message timestamp survives without resurrecting hidden content
+  ---
+  duration_ms: 2.156039
+  type: 'test'
+  ...
+# Subtest: unique source messages remain attributable after another extension transforms their content
+ok 7 - unique source messages remain attributable after another extension transforms their content
+  ---
+  duration_ms: 0.624815
+  type: 'test'
+  ...
+# Subtest: native file operations rebuild visible direct and nested calls with default prior metadata
+ok 8 - native file operations rebuild visible direct and nested calls with default prior metadata
+  ---
+  duration_ms: 1.224584
+  type: 'test'
+  ...
+# Subtest: native file operations rebuild visible direct and nested calls with hook prior metadata
+ok 9 - native file operations rebuild visible direct and nested calls with hook prior metadata
+  ---
+  duration_ms: 0.939679
+  type: 'test'
+  ...
+# Subtest: folds history after the target in the same run and keeps sibling outputs
+ok 10 - folds history after the target in the same run and keeps sibling outputs
+  ---
+  duration_ms: 66.562552
+  type: 'test'
+  ...
+# Subtest: codemode keeps the whole script output and folded store state
+ok 11 - codemode keeps the whole script output and folded store state
+  ---
+  duration_ms: 245.09404
+  type: 'test'
+  ...
+# Subtest: steering sent while the compact step runs arrives after the summary
+ok 12 - steering sent while the compact step runs arrives after the summary
+  ---
+  duration_ms: 12.044428
+  type: 'test'
+  ...
+# Subtest: two compact requests in one step fold nothing
+ok 13 - two compact requests in one step fold nothing
+  ---
+  duration_ms: 18.991075
+  type: 'test'
+  ...
+# Subtest: rejects targets that are not visible entries before the request
+ok 14 - rejects targets that are not visible entries before the request
+  ---
+  duration_ms: 15.514625
+  type: 'test'
+  ...
+# Subtest: checkpoint names stay unique, resolvable, and never replace another checkpoint
+ok 15 - checkpoint names stay unique, resolvable, and never replace another checkpoint
+  ---
+  duration_ms: 25.349414
+  type: 'test'
+  ...
+# Subtest: backupCheckpoint must be a new checkpoint name
+ok 16 - backupCheckpoint must be a new checkpoint name
+  ---
+  duration_ms: 12.620238
+  type: 'test'
+  ...
+# Subtest: duplicate labels set outside the tools resolve to the newest on the active path
+ok 17 - duplicate labels set outside the tools resolve to the newest on the active path
+  ---
+  duration_ms: 10.876507
+  type: 'test'
+  ...
+# Subtest: a target assistant keeps its own tool results
+ok 18 - a target assistant keeps its own tool results
+  ---
+  duration_ms: 16.900866
+  type: 'test'
+  ...
+# Subtest: repeated compaction to root also folds the earlier summary
+ok 19 - repeated compaction to root also folds the earlier summary
+  ---
+  duration_ms: 11.43306
+  type: 'test'
+  ...
+# Subtest: after Pi native compaction, targets outside model context are rejected; later targets and root fold cleanly
+ok 20 - after Pi native compaction, targets outside model context are rejected; later targets and root fold cleanly
+  ---
+  duration_ms: 29.453768
+  type: 'test'
+  ...
+# Subtest: a step interrupted by the user does not fold history
+ok 21 - a step interrupted by the user does not fold history
+  ---
+  duration_ms: 58.818033
+  type: 'test'
+  ...
+# Subtest: /acm remains a compatibility command
+ok 22 - /acm remains a compatibility command
+  ---
+  duration_ms: 0.370317
+  type: 'test'
+  ...
+# Subtest: summary renderer collapses to the title and shows the summary and kept tool outputs when expanded
+ok 23 - summary renderer collapses to the title and shows the summary and kept tool outputs when expanded
+  ---
+  duration_ms: 2.522626
+  type: 'test'
+  ...
+# Subtest: compacting 10 history entries stores one range and no edits
+ok 24 - compacting 10 history entries stores one range and no edits
+  ---
+  duration_ms: 16.276249
+  type: 'test'
+  ...
+# Subtest: compacting 2000 history entries stores one range and no edits
+ok 25 - compacting 2000 history entries stores one range and no edits
+  ---
+  duration_ms: 71.007839
+  type: 'test'
+  ...
+# Subtest: saved range survives reopening, restores at backup, and does not affect a sibling branch
+ok 26 - saved range survives reopening, restores at backup, and does not affect a sibling branch
+  ---
+  duration_ms: 19.625754
+  type: 'test'
+  ...
+# Subtest: manual native compaction excludes hidden text and file operations while using Pi's generator
+ok 27 - manual native compaction excludes hidden text and file operations while using Pi's generator
+  ---
+  duration_ms: 21.234486
+  type: 'test'
+  ...
+# Subtest: threshold native compaction excludes hidden text and file operations while using Pi's generator
+ok 28 - threshold native compaction excludes hidden text and file operations while using Pi's generator
+  ---
+  duration_ms: 14.695699
+  type: 'test'
+  ...
+# Subtest: overflow native compaction excludes hidden text and file operations while using Pi's generator
+ok 29 - overflow native compaction excludes hidden text and file operations while using Pi's generator
+  ---
+  duration_ms: 28.839114
+  type: 'test'
+  ...
+# Subtest: live context capture uses IPC while Pi redirects extension stdout to stderr
+ok 30 - live context capture uses IPC while Pi redirects extension stdout to stderr
+  ---
+  duration_ms: 78.934777
+  type: 'test'
+  ...
+# Subtest: live native observer forwards the original provider context and options and restores the stream
+ok 31 - live native observer forwards the original provider context and options and restores the stream
+  ---
+  duration_ms: 83.270848
+  type: 'test'
+  ...
+# Subtest: session snapshot fixes physical line cutoff and hash; tolerates only incomplete final line
+ok 32 - session snapshot fixes physical line cutoff and hash; tolerates only incomplete final line
+  ---
+  duration_ms: 2.120092
+  type: 'test'
+  ...
+# Subtest: session analysis counts cache tokens, excludes zero context, and confirms compaction ancestry
+ok 33 - session analysis counts cache tokens, excludes zero context, and confirms compaction ancestry
+  ---
+  duration_ms: 2.09055
+  type: 'test'
+  ...
+# Subtest: ordinary branches, failed compact calls, label clears and native compaction stay distinct
+ok 34 - ordinary branches, failed compact calls, label clears and native compaction stay distinct
+  ---
+  duration_ms: 1.066215
+  type: 'test'
+  ...
+# Subtest: stale compaction calls cannot classify a later unrelated branch summary
+ok 35 - stale compaction calls cannot classify a later unrelated branch summary
+  ---
+  duration_ms: 1.2764
+  type: 'test'
+  ...
+# Subtest: auxiliary work and output-only records count toward cumulative tokens, not input observations
+ok 36 - auxiliary work and output-only records count toward cumulative tokens, not input observations
+  ---
+  duration_ms: 0.374402
+  type: 'test'
+  ...
+# Subtest: invalid or unknown usage is reported rather than plotted as a false zero
+ok 37 - invalid or unknown usage is reported rather than plotted as a false zero
+  ---
+  duration_ms: 0.41748
+  type: 'test'
+  ...
+# Subtest: threshold simulation neutralizes confirmed drops, preserves other deltas and threshold overflow
+ok 38 - threshold simulation neutralizes confirmed drops, preserves other deltas and threshold overflow
+  ---
+  duration_ms: 0.515566
+  type: 'test'
+  ...
+# Subtest: chart time axis removes idle intervals, preserves active elapsed time and restores real labels
+ok 39 - chart time axis removes idle intervals, preserves active elapsed time and restores real labels
+  ---
+  duration_ms: 9.701544
+  type: 'test'
+  ...
+# Subtest: CLI writes offline safe HTML/CSV and rejects overwrite and bad options
+ok 40 - CLI writes offline safe HTML/CSV and rejects overwrite and bad options
+  ---
+  duration_ms: 267.991571
+  type: 'test'
+  ...
+# Subtest: behavior report renders calls without positive usage and exports only safe evidence
+ok 41 - behavior report renders calls without positive usage and exports only safe evidence
+  ---
+  duration_ms: 64.645632
+  type: 'test'
+  ...
+# Subtest: CLI, JSON and HTML retain the codemode partial-analysis warning
+ok 42 - CLI, JSON and HTML retain the codemode partial-analysis warning
+  ---
+  duration_ms: 50.122975
+  type: 'test'
+  ...
+# Subtest: empty session creates a zero-activity report without inventing observations
+ok 43 - empty session creates a zero-activity report without inventing observations
+  ---
+  duration_ms: 63.314801
+  type: 'test'
+  ...
+# Subtest: empty file creates a zero-activity report without inventing observations
+ok 44 - empty file creates a zero-activity report without inventing observations
+  ---
+  duration_ms: 87.452467
+  type: 'test'
+  ...
+# Subtest: empty tool and usage sessions retain the complete report array schema
+ok 45 - empty tool and usage sessions retain the complete report array schema
+  ---
+  duration_ms: 3.239008
+  type: 'test'
+  ...
+# Subtest: codemode metrics explicitly warn of partial coverage (undefined)
+ok 46 - codemode metrics explicitly warn of partial coverage (undefined)
+  ---
+  duration_ms: 0.934232
+  type: 'test'
+  ...
+# Subtest: codemode metrics explicitly warn of partial coverage ({&quot;complete&quot;:true,&quot;calls&quot;:[{&quot;id&quot;:&quot;outer/1&quot;,&quot;name&quot;:&quot;context_compact&quot;,&quot;status&quot;:&quot;ok&quot;,&quot;arguments&quot;:{&quot;summary&quot;:&quot;PRIVATE_NESTED_BODY&quot;}}]})
+ok 47 - codemode metrics explicitly warn of partial coverage ({&quot;complete&quot;:true,&quot;calls&quot;:[{&quot;id&quot;:&quot;outer/1&quot;,&quot;name&quot;:&quot;context_compact&quot;,&quot;status&quot;:&quot;ok&quot;,&quot;arguments&quot;:{&quot;summary&quot;:&quot;PRIVATE_NESTED_BODY&quot;}}]})
+  ---
+  duration_ms: 0.356991
+  type: 'test'
+  ...
+# Subtest: codemode metrics explicitly warn of partial coverage ({&quot;complete&quot;:false,&quot;calls&quot;:[]})
+ok 48 - codemode metrics explicitly warn of partial coverage ({&quot;complete&quot;:false,&quot;calls&quot;:[]})
+  ---
+  duration_ms: 1.152575
+  type: 'test'
+  ...
+# Subtest: tool results join interleaved calls by ID, with privacy-safe text counts and statuses
+ok 49 - tool results join interleaved calls by ID, with privacy-safe text counts and statuses
+  ---
+  duration_ms: 1.103061
+  type: 'test'
+  ...
+# Subtest: duplicate call IDs remain separate on sibling branches and nearest ancestor wins
+ok 50 - duplicate call IDs remain separate on sibling branches and nearest ancestor wins
+  ---
+  duration_ms: 0.511823
+  type: 'test'
+  ...
+# Subtest: accepted interrupted compact without a branch is unconfirmed, not resumed
+ok 51 - accepted interrupted compact without a branch is unconfirmed, not resumed
+  ---
+  duration_ms: 0.701394
+  type: 'test'
+  ...
+# Subtest: actual compact branch ancestry identifies resumed, removed and retained evidence honestly
+ok 52 - actual compact branch ancestry identifies resumed, removed and retained evidence honestly
+  ---
+  duration_ms: 0.884105
+  type: 'test'
+  ...
+# Subtest: rereads distinguish changed output, changed ranges, and failed reads; recovery stops at next compact
+ok 53 - rereads distinguish changed output, changed ranges, and failed reads; recovery stops at next compact
+  ---
+  duration_ms: 0.994276
+  type: 'test'
+  ...
+# Subtest: recovery does not mix later sibling histories into the resulting action path
+ok 54 - recovery does not mix later sibling histories into the resulting action path
+  ---
+  duration_ms: 0.64873
+  type: 'test'
+  ...
+# Subtest: native compaction boundaries exclude uncertain earlier raw reads from reread evidence
+ok 55 - native compaction boundaries exclude uncertain earlier raw reads from reread evidence
+  ---
+  duration_ms: 0.42728
+  type: 'test'
+  ...
+# Subtest: prior read results must actually occur on replaced ancestry, not a sibling or later snapshot record
+ok 56 - prior read results must actually occur on replaced ancestry, not a sibling or later snapshot record
+  ---
+  duration_ms: 0.401144
+  type: 'test'
+  ...
+# Subtest: intentional read pagination is partial file evidence, not output truncation
+ok 57 - intentional read pagination is partial file evidence, not output truncation
+  ---
+  duration_ms: 0.921203
+  type: 'test'
+  ...
+# Subtest: skill read evidence is successful returned text, partial reads are not canonical content
+ok 58 - skill read evidence is successful returned text, partial reads are not canonical content
+  ---
+  duration_ms: 0.379464
+  type: 'test'
+  ...
+# Subtest: compact errors and positive aborted assistants never imply resumed work
+ok 59 - compact errors and positive aborted assistants never imply resumed work
+  ---
+  duration_ms: 0.693837
+  type: 'test'
+  ...
+# Subtest: recovery is bounded to ten tools and sessions without usage still expose tools and milestones
+ok 60 - recovery is bounded to ten tools and sessions without usage still expose tools and milestones
+  ---
+  duration_ms: 0.802482
+  type: 'test'
+  ...
+# Subtest: range summary alone confirms compaction with exclusive assistant bounds
+ok 61 - range summary alone confirms compaction with exclusive assistant bounds
+  ---
+  duration_ms: 0.547005
+  type: 'test'
+  ...
+# Subtest: range summary alone confirms compaction with root bounds
+ok 62 - range summary alone confirms compaction with root bounds
+  ---
+  duration_ms: 0.605559
+  type: 'test'
+  ...
+# Subtest: range rules survive a later hidden summary
+ok 63 - range rules survive a later hidden summary
+  ---
+  duration_ms: 0.768991
+  type: 'test'
+  ...
+# Subtest: range rules survive a later hidden summary and native summarization
+ok 64 - range rules survive a later hidden summary and native summarization
+  ---
+  duration_ms: 0.475608
+  type: 'test'
+  ...
+# Subtest: range evidence follows summary ancestry, excluding sibling records
+ok 65 - range evidence follows summary ancestry, excluding sibling records
+  ---
+  duration_ms: 1.480738
+  type: 'test'
+  ...
+# Subtest: timeline displays or estimates retained codemode output ({})
+ok 66 - timeline displays or estimates retained codemode output ({})
+  ---
+  duration_ms: 1.986785
+  type: 'test'
+  ...
+# Subtest: timeline displays or estimates retained codemode output ({&quot;verbose&quot;:true})
+ok 67 - timeline displays or estimates retained codemode output ({&quot;verbose&quot;:true})
+  ---
+  duration_ms: 0.27241
+  type: 'test'
+  ...
+# Subtest: timeline displays or estimates retained codemode output ({&quot;limit&quot;:1})
+ok 68 - timeline displays or estimates retained codemode output ({&quot;limit&quot;:1})
+  ---
+  duration_ms: 0.350895
+  type: 'test'
+  ...
+# Subtest: dashboard counts native tool output in Tool Call category
+ok 69 - dashboard counts native tool output in Tool Call category
+  ---
+  duration_ms: 4.361059
+  type: 'test'
+  ...
+# Subtest: dashboard counts retained codemode output in Tool Call category
+ok 70 - dashboard counts retained codemode output in Tool Call category
+  ---
+  duration_ms: 0.565041
+  type: 'test'
+  ...
+# Subtest: timeline reports structure without compact advice (no checkpoint)
+ok 71 - timeline reports structure without compact advice (no checkpoint)
+  ---
+  duration_ms: 0.66542
+  type: 'test'
+  ...
+# Subtest: timeline reports structure without compact advice (review-start)
+ok 72 - timeline reports structure without compact advice (review-start)
+  ---
+  duration_ms: 0.671151
+  type: 'test'
+  ...
+# Subtest: parseCheckpointPhase parses only agreed suffixes
+ok 73 - parseCheckpointPhase parses only agreed suffixes
+  ---
+  duration_ms: 1.216066
+  type: 'test'
+  ...
+# Subtest: estimateHistoryTokens excludes internal context traffic
+ok 74 - estimateHistoryTokens excludes internal context traffic
+  ---
+  duration_ms: 0.301015
+  type: 'test'
+  ...
+# Subtest: retained codemode output is counted as task context, including images
+ok 75 - retained codemode output is counted as task context, including images
+  ---
+  duration_ms: 0.133007
+  type: 'test'
+  ...
+# Subtest: describeHistoryInterval counts roles and estimates tokens
+ok 76 - describeHistoryInterval counts roles and estimates tokens
+  ---
+  duration_ms: 0.413518
+  type: 'test'
+  ...
+1..76
+# tests 76
+# suites 0
+# pass 76
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1730.57196</pre>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

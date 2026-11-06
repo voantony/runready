@@ -1,0 +1,83 @@
+{
+  "id": "aaf624af-2e07-46df-8c6c-61e560c40e8e",
+  "repoUrl": "https://gitlab.com/antonyvo/koreader-library-gui",
+  "webUrl": "https://gitlab.com/antonyvo/koreader-library-gui",
+  "cloneUrl": "https://gitlab.com/antonyvo/koreader-library-gui.git",
+  "host": "gitlab",
+  "owner": "antonyvo",
+  "project": "koreader-library-gui",
+  "status": "passed",
+  "createdAt": "2026-11-06T02:21:16.582Z",
+  "startedAt": "2026-11-06T02:21:16.585Z",
+  "finishedAt": "2026-11-06T02:21:17.643Z",
+  "durationMs": 1058,
+  "sandbox": "unshare",
+  "files": [
+    "AGENTS.md",
+    "README.md",
+    "CONTRIBUTING.md"
+  ],
+  "notes": [
+    "AGENTS.md, CLAUDE.md, and install.md did not list install, build, or verify commands. RunReady used the README and linked contributing docs."
+  ],
+  "steps": [
+    {
+      "phase": "clone",
+      "command": "git clone --depth 1 https://gitlab.com/antonyvo/koreader-library-gui.git",
+      "sourceFile": null,
+      "sourceLine": null,
+      "derived": false,
+      "network": "on",
+      "status": "passed",
+      "exitCode": 0,
+      "durationMs": 673,
+      "log": "Cloning into '/workspace/data/workspaces/aaf624af-2e07-46df-8c6c-61e560c40e8e/repo'...",
+      "truncated": false,
+      "timedOut": false
+    },
+    {
+      "phase": "build",
+      "command": "make zip VERSION=0.3.0",
+      "sourceFile": "CONTRIBUTING.md",
+      "sourceLine": 83,
+      "derived": false,
+      "network": "off",
+      "status": "passed",
+      "exitCode": 0,
+      "durationMs": 79,
+      "log": "rm -rf dist\nmkdir -p dist/library.koplugin\ncd library.koplugin && cp _meta.lua main.lua librarycore.lua libraryindex.lua libraryview.lua librarytile.lua librarycovers.lua librarykeyboard.lua librarycontrols.lua librarydetails.lua libraryreadermenu.lua libraryreaderpanel.lua librarybezel.lua libraryreadability.lua librarysuggest.lua librarytiming.lua libraryscrubber.lua ../dist/library.koplugin/\ncd dist/library.koplugin && shasum -a 256 _meta.lua main.lua librarycore.lua libraryindex.lua libraryview.lua librarytile.lua librarycovers.lua librarykeyboard.lua librarycontrols.lua librarydetails.lua libraryreadermenu.lua libraryreaderpanel.lua librarybezel.lua libraryreadability.lua librarysuggest.lua librarytiming.lua libraryscrubber.lua > ../SHA256SUMS 2>/dev/null || sha256sum _meta.lua main.lua librarycore.lua libraryindex.lua libraryview.lua librarytile.lua librarycovers.lua librarykeyboard.lua librarycontrols.lua librarydetails.lua libraryreadermenu.lua libraryreaderpanel.lua librarybezel.lua libraryreadability.lua librarysuggest.lua librarytiming.lua libraryscrubber.lua > ../SHA256SUMS\ncd dist && zip -rX library-gui-0.3.0.zip library.koplugin && (shasum -a 256 library-gui-0.3.0.zip 2>/dev/null || sha256sum library-gui-0.3.0.zip) >> SHA256SUMS\n  adding: library.koplugin/ (stored 0%)\n  adding: library.koplugin/libraryview.lua (deflated 75%)\n  adding: library.koplugin/_meta.lua (deflated 33%)\n  adding: library.koplugin/librarysuggest.lua (deflated 62%)\n  adding: library.koplugin/libraryreadermenu.lua (deflated 62%)\n  adding: library.koplugin/librarydetails.lua (deflated 77%)\n  adding: library.koplugin/libraryreadability.lua (deflated 64%)\n  adding: library.koplugin/librarytile.lua (deflated 77%)\n  adding: library.koplugin/libraryreaderpanel.lua (deflated 67%)\n  adding: library.koplugin/libraryindex.lua (deflated 70%)\n  adding: library.koplugin/librarycore.lua (deflated 71%)\n  adding: library.koplugin/librarycovers.lua (deflated 68%)\n  adding: library.koplugin/librarytiming.lua (deflated 59%)\n  adding: library.koplugin/librarykeyboard.lua (deflated 64%)\n  adding: library.koplugin/main.lua (deflated 76%)\n  adding: library.koplugin/libraryscrubber.lua (deflated 72%)\n  adding: library.koplugin/librarycontrols.lua (deflated 73%)\n  adding: library.koplugin/librarybezel.lua (deflated 53%)",
+      "truncated": false,
+      "timedOut": false
+    },
+    {
+      "phase": "verify",
+      "command": "luajit spec/run.lua",
+      "sourceFile": "CONTRIBUTING.md",
+      "sourceLine": 19,
+      "derived": false,
+      "network": "off",
+      "status": "passed",
+      "exitCode": 0,
+      "durationMs": 293,
+      "log": "............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n508 passed, 0 failed",
+      "truncated": false,
+      "timedOut": false
+    },
+    {
+      "phase": "verify",
+      "command": "make test LUA=/path/to/koreader/luajit",
+      "sourceFile": "CONTRIBUTING.md",
+      "sourceLine": 22,
+      "derived": false,
+      "network": "off",
+      "status": "skipped",
+      "exitCode": null,
+      "durationMs": 0,
+      "log": "Refusing argument `LUA=/path/to/koreader/luajit`.",
+      "truncated": false,
+      "skipReason": "Refusing argument `LUA=/path/to/koreader/luajit`."
+    }
+  ],
+  "suggestedFix": null,
+  "error": null
+}
