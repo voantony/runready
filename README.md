@@ -1,6 +1,7 @@
 # RunReady
 
 [![pipeline status](https://gitlab.com/antonyvo/runready/badges/main/pipeline.svg)](https://gitlab.com/antonyvo/runready/-/commits/main)
+[![Latest release](https://img.shields.io/github/v/release/voantony/runready)](https://github.com/voantony/runready/releases/latest)
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node.js 22](https://img.shields.io/badge/node-22-339933.svg)](https://nodejs.org/)
 
@@ -9,8 +10,6 @@ Prove a public repository's agent docs still install on a clean machine.
 Paste a GitHub or GitLab HTTPS URL. RunReady clones it, reads `AGENTS.md`, `CLAUDE.md`, or `install.md` (and falls back to the README install or development section, including one linked `CONTRIBUTING.md`), runs the install, build, and verify commands, and stores a shareable pass/fail report. When the proof fails, or the commands were only in the README, the report drafts a patch: an updated agent doc, `scripts/agent-check`, and a GitLab CI or GitHub Actions workflow.
 
 RunReady is free. There is no account, no quota, and no payment.
-
-The pipeline badge above starts working after the public project exists. Until then, run `npm test` locally.
 
 ## Quick start
 
