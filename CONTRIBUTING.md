@@ -7,7 +7,7 @@ RunReady is free software under the [MIT license](LICENSE). Issues and merge req
 Requirements: Node.js 22, git, and either Linux `unshare` (util-linux) or Docker.
 
 ```bash
-git clone https://gitlab.com/antonyvo/runready.git
+git clone https://github.com/voantony/runready.git
 cd runready
 npm ci
 cp .env.example .env.local   # optional; leave the tokens empty

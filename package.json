@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/antonyvo/runready.git"
+    "url": "git+https://github.com/voantony/runready.git"
   },
   "scripts": {
     "dev": "next dev",

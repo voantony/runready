@@ -20,7 +20,7 @@ Requirements:
 - Linux `unshare` and `setpriv` from util-linux, or a working Docker daemon
 
 ```bash
-git clone https://gitlab.com/antonyvo/runready.git
+git clone https://github.com/voantony/runready.git
 cd runready
 npm ci
 cp .env.example .env.local   # optional
